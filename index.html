@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureClient NoteApp</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PureClient NoteApp</h1>
+        </header>
+        
+        <main>
+            <div class="app-container">
+                <!-- 과목 관리 섹션 -->
+                <section class="subject-section">
+                    <h2>과목 관리</h2>
+                    <div class="subject-input-container">
+                        <input type="text" id="subject-input" placeholder="과목명을 입력하세요">
+                        <button id="add-subject-btn">추가</button>
+                    </div>
+                    <div class="subject-list-container">
+                        <h3>과목 목록</h3>
+                        <ul id="subject-list"></ul>
+                    </div>
+                </section>
+
+                <!-- 노트 관리 섹션 -->
+                <section class="note-section">
+                    <h2>노트 관리</h2>
+                    <div class="note-header">
+                        <div id="current-subject">선택된 과목: 없음</div>
+                        <div class="week-selector">
+                            <label for="week-select">주차 선택:</label>
+                            <select id="week-select" disabled>
+                                <option value="">주차 선택</option>
+                                <option value="1">1주차</option>
+                                <option value="2">2주차</option>
+                                <option value="3">3주차</option>
+                                <option value="4">4주차</option>
+                                <option value="5">5주차</option>
+                                <option value="6">6주차</option>
+                                <option value="7">7주차</option>
+                                <option value="8">8주차</option>
+                                <option value="9">9주차</option>
+                                <option value="10">10주차</option>
+                                <option value="11">11주차</option>
+                                <option value="12">12주차</option>
+                                <option value="13">13주차</option>
+                                <option value="14">14주차</option>
+                                <option value="15">15주차</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="note-editor">
+                        <textarea id="note-content" placeholder="노트 내용을 입력하세요" disabled></textarea>
+                        <div class="note-actions">
+                            <div class="file-upload">
+                                <label for="note-file-input">텍스트 파일 업로드:</label>
+                                <input type="file" id="note-file-input" accept=".txt">
+                            </div>
+                            <button id="save-note-btn" disabled>저장</button>
+                            <button id="download-note-btn" disabled>다운로드</button>
+                            <div class="save-status" id="save-status"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 PureClient NoteApp - 순수 클라이언트 기반 웹 노트 앱</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript 파일 로드 -->
+    <script src="js/utils/storage.js"></script>
+    <script src="js/models/subject.js"></script>
+    <script src="js/models/note.js"></script>
+    <script src="js/controllers/subject-controller.js"></script>
+    <script src="js/controllers/note-controller.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
